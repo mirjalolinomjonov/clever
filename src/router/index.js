@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Layout from '../layouts/index.vue'
 import Home from '../pages/index.vue'
 
 const router = createRouter({
@@ -6,8 +7,26 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'layout',
+      component: Layout,
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: Home
+        }
+      ]
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: () => import('@/layouts/auth.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      meta: { title: 'Not found page' },
+      component: () => import('@/layouts/error.vue')
     }
     // {
     //   path: '/about',
