@@ -1,14 +1,28 @@
 <template>
-  <main class="text-red-500">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa soluta voluptates, temporibus ut
-    atque, expedita sequi eaque ex ea voluptatem aperiam nam! Voluptate voluptas odit accusantium
-    tempore perspiciatis at tempora.
-  </main>
+  <section>
+    <Header id="header" title="Dashboard" />
+    <div
+      class="container p-[30px] bg-[#f0fdf4] overflow-y-auto"
+      :style="`height: calc(100vh - ${offsetHeight}px)`"
+    >
+      <RouterView />
+    </div>
+  </section>
 </template>
 
 <script>
+import Header from '@/components/layouts/Header.vue'
 export default {
-  name: 'indexPage'
+  name: 'indexPage',
+  components: { Header },
+  data() {
+    return {
+      offsetHeight: undefined
+    }
+  },
+  mounted() {
+    this.offsetHeight = document.querySelector('#header').offsetHeight
+  }
 }
 </script>
 

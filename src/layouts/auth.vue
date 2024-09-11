@@ -1,7 +1,7 @@
 <template>
   <main class="auth-simple">
     <router-link to="/" class="flex justify-center py-6">
-      <img class="" src="@/assets/icons/logo.svg" alt="clever logo" />
+      <img class="h-10 w-[151px]" src="@/assets/icons/logo.svg" alt="clever logo" />
     </router-link>
     <keep-alive class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <component :is="currentComponent" @changeAuthSimple="currentComponent = $event"></component>

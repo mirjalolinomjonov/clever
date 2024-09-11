@@ -1,12 +1,17 @@
 <template>
-  <main>
-    <RouterView />
+  <main class="flex">
+    <Dashboard />
+    <RouterView class="w-full" />
   </main>
 </template>
 
 <script>
+import Dashboard from '@/components/Dashboard.vue'
 export default {
-  name: 'layoutIndex'
+  name: 'layoutIndex',
+  components: {
+    Dashboard
+  }
 }
 </script>
 

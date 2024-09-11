@@ -7,6 +7,12 @@
     @apply flex items-center;
   }
 
+  @layer components {
+    .flex-between {
+      @apply flex justify-between;
+    }
+  }
+
   .inline-flex-center {
     @apply inline-flex items-center;
   }
